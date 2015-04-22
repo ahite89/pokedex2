@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pokedex</title>
+    <link type="text/css" rel="stylesheet" href="/styles.css">
+    <meta charset="UTF-8">
+  </head>
+
+  <body class="pokedex">
+    <h1 class="awesome">Awesome Pokedex</h1>
+    <p>
+    </p>
+    <h3>Click on a pokemon to see its stats!</h3>
+
+      <% ordered_pokemon.each do |row| %>
+        <a href="/pokedex/<%= row.last %>"><img src="<%= image_url + row.first.downcase %>.gif"/></a>
+      <% end %>
+
+    </body>
+</html>

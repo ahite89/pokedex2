@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pokemon Details</title>
+  <link type="text/css" rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+</head>
+
+<body>
+
+<div id="name">
+  <h2><%= name %></h2>
+</div>
+
+<img id="picture" src="<%= image + name.downcase %>.gif"/>
+
+<div id="type">
+  <% types.each do |type| %>
+    <%= type["name"].capitalize %>
+  <% end %>
+</div>
+
+<div id="stats">
+<table border="1px">
+  <tbody>
+    <tr>
+      <td>Pokedex #</td>
+      <td><%= pokemon["national_id"] %></td>
+    </tr>
+    <tr>
+      <td>HP</td>
+      <td><%= pokemon["hp"] %></td>
+    </tr>
+    <tr>
+      <td>Attack</td>
+      <td><%= pokemon["attack"] %></td>
+    </tr>
+    <tr>
+      <td>Defense</td>
+      <td><%= pokemon["defense"] %></td>
+    </tr>
+    <tr>
+      <td>Sp. Attack</td>
+      <td><%= pokemon["sp_atk"] %></td>
+    </tr>
+    <tr>
+      <td>Sp. Defense</td>
+      <td><%= pokemon["sp_def"] %></td>
+    </tr>
+    <tr>
+      <td>Speed</td>
+      <td><%= pokemon["speed"] %></td>
+    </tr>
+    <tr>
+      <td>Height</td>
+      <td><%= pokemon["height"] %> ft</td>
+    </tr>
+    <tr>
+      <td>Weight</td>
+      <td><%= pokemon["weight"] %> lbs</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="description">
+  <h4>Description</h4>
+</div>
+
+<div id="moves">
+  <h4>Moves</h4>
+  <% moves.each do |move| %>
+    Learns <%= move["name"] %> at level <%= move["level"] %> Type: <%= move["learn_type"] %>
+    <p></p>
+  <% end %>
+</div>
+
+<div id="evolutions">
+  <% evolutions.each do |evolution| %>
+    <% if id < 150 %>
+    <h4>Evolutions</h4>
+    <%= evolution["method"] + " to " %> <a href="/pokedex/<%= id + 1 %>"><img src="<%= image + evolved_name.downcase %>.gif"/></a>
+      <% end %>
+  <% end %>
+</div>
+
+</body>
+</html>
