@@ -3,7 +3,7 @@
   font-family: pokemon hollow;
 }
 
-.pokedex {
+body {
   background: -webkit-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("http://cdn.bulbagarden.net/upload/d/d4/FRLG_Kanto.png");
   background: -moz-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("http://cdn.bulbagarden.net/upload/d/d4/FRLG_Kanto.png");
   background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("http://cdn.bulbagarden.net/upload/d/d4/FRLG_Kanto.png");
